@@ -1,0 +1,15 @@
+body {
+    background-color: rgb(72, 64, 90);
+}
+
+#play {
+    height: 0;
+    width: 0;
+    border-top: 2em solid transparent;
+    border-left: 3em solid red;
+    border-bottom: 2em solid transparent;
+}
+
+.png {
+    background-color: rgba(0, 0, 0, 0);
+}
