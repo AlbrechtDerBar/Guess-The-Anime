@@ -2,14 +2,24 @@ body {
     background-color: rgb(72, 64, 90);
 }
 
-#play {
-    height: 0;
-    width: 0;
-    border-top: 2em solid transparent;
-    border-left: 3em solid red;
-    border-bottom: 2em solid transparent;
+.png {
+    height: 3em;
+    width: 3em;
+    background-color: rgba(0, 0, 0, 0);
 }
 
-.png {
+#settings {
+    display: none;
+}
+
+#anime-title {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#song-title {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.titles {
     background-color: rgba(0, 0, 0, 0);
 }

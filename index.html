@@ -8,14 +8,36 @@
     </header>
     <body>
         <h1 id="title">Guess the Anime</h1>
+        <div class="settings-container">
+        <img src="Images/nav.png" alt="nav-bar" class="png" id="nav" onclick="settings()">
+            <div id="settings">
+                <form>
+                    <input type="checkbox" id="random" name="random-start" value="random" checked="true">
+                    <label for="random">Random start</label><br>
+
+                    <input type="checkbox" id="tenSec" name="tenSec" value="tenSec">
+                    <label for="tenSec">Play 10 seconds</label><br>
+
+                    <input type="checkbox" id="includeSongName" name="includeSongName" value="includeSongName">
+                    <label for="includeSongName">Include the song name</label><br>
+
+                    <input type="checkbox" id="includeSongName" name="includeSongName" value="includeSongName">
+                    <label for="includeSongName">Always show song title</label><br>
+                </form>
+            </div>
+        </div>
         <div class="video-container">
             <div class="video" id="player">
                 <!-- <iframe width="500" height="500" src="https://www.youtube.com/embed/g_mgqYb-GYw" frameborder="0" id="music"></iframe> -->
             </div>
+            <div id="anime-title" class="titles"></div>
+            <div id="song-title" class="titles"></div>
             <div class="controls">
                 <div class="buttons">
-                    <div id="play" onclick="play()"></div>
-                    <div id="skip" onclick="skip()">skip</div>
+                    <img src="Images/prev.png" alt="previous-song-button" class="png" id="prev">
+                    <img src="Images/play.png" alt="play-button" class="png" id="play-pause">
+                    <img src="Images/replay.png" alt="replay-button" class="png" id="replay">
+                    <img src="Images/next.png" alt="next-song-button" class="png" id="next">
                 </div>
             </div>
         </div>
