@@ -13,12 +13,20 @@ function init() {
     var playbutton = document.getElementById("play-pause");
     var replaybutton = document.getElementById("replay");
     var nextbutton = document.getElementById("next");
+    var show = document.getElementById("show");
+    var showSongAlways = document.getElementById("includeSongNameFull");
+    var songName = document.getElementById("includeSongName");
+    var random = document.getElementById("random");
 
     prevbutton.addEventListener("click", prev);
     settingsbutton.addEventListener("click", settings);
     playbutton.addEventListener("click", playPause);
     replaybutton.addEventListener("click", replay);
     nextbutton.addEventListener("click", next);
+    show.addEventListener("click", showAnime);
+    showSongAlways.addEventListener("change", songTitleFull);
+    songName.addEventListener("change", songTitle);
+    random.addEventListener("change", next);
 }
 
 var player;
@@ -48,7 +56,7 @@ function rndVideo() {
 }
 //random function for start time
 function rndTime() {
-    return (15 + Math.floor(Math.random() * 15));
+    return (60 + Math.floor(Math.random() * 15));
 }
 
 
@@ -126,12 +134,13 @@ function songTitle() {
 
     if (includesongTitleFull.hasAttribute("disabled")) {
         includesongTitleFull.disabled = false;
+        songTitle.innerHTML = songTitles[rnd];
     }
     else {
         includesongTitleFull.disabled = true;
         includesongTitleFull.checked = false;
+        songTitle.innerHTML = "";
     }
-    songTitle.innerHTML = songTitles[rnd]
 }
 
 function songTitleFull() {

@@ -10,7 +10,6 @@
         <h1 id="title">Guess the Anime</h1>
         <div class="video-container">
             <div class="video" id="player">
-                <!-- <iframe width="500" height="500" src="https://www.youtube.com/embed/g_mgqYb-GYw" frameborder="0" id="music"></iframe> -->
             </div>
             <div id="anime-title" class="titles"></div>
             <br>
@@ -26,13 +25,13 @@
             </div>
                 <div id="settings">
                     <form>
-                        <input type="checkbox" id="random" name="random-start" value="random" onchange="next()">
+                        <input type="checkbox" id="random" name="random-start" value="random">
                         <label for="random">Random start</label><br>
     
-                        <input type="checkbox" id="includeSongName" name="includeSongName" value="includeSongName" onclick="songTitle()">
+                        <input type="checkbox" id="includeSongName" name="includeSongName" value="includeSongName">
                         <label for="includeSongName">Include the song title</label><br>
     
-                        <input type="checkbox" id="includeSongNameFull" name="includeSongNameFull" value="includeSongNameFull" onchange="songTitleFull()" disabled>
+                        <input type="checkbox" id="includeSongNameFull" name="includeSongNameFull" value="includeSongNameFull" disabled>
                         <label for="includeSongNameFull">Always show song title</label><br>
 
                         <label for="cars">How long should the video play:</label>
@@ -46,6 +45,6 @@
                     </form>
                 </div>
             </div>
-            <button onclick="showAnime()">Show anime</button>
+            <button id="show">Show anime</button>
     </body>
 </html>
