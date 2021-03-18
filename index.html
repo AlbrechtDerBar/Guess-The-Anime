@@ -13,11 +13,12 @@
                 <!-- <iframe width="500" height="500" src="https://www.youtube.com/embed/g_mgqYb-GYw" frameborder="0" id="music"></iframe> -->
             </div>
             <div id="anime-title" class="titles"></div>
+            <br>
             <div id="song-title" class="titles"></div>
             <div class="controls">
                 <div class="buttons">
                     <img src="Images/prev.png" alt="previous-song-button" class="png" id="prev">
-                    <img src="Images/settings.png" alt="settings-button" class="png" id="settings-button" onclick="settings()">
+                    <img src="Images/settings.png" alt="settings-button" class="png" id="settings-button">
                     <img src="Images/play.png" alt="play-button" class="png" id="play-pause">
                     <img src="Images/replay.png" alt="replay-button" class="png" id="replay">
                     <img src="Images/next.png" alt="next-song-button" class="png" id="next">
@@ -25,13 +26,13 @@
             </div>
                 <div id="settings">
                     <form>
-                        <input type="checkbox" id="random" name="random-start" value="random">
+                        <input type="checkbox" id="random" name="random-start" value="random" onchange="next()">
                         <label for="random">Random start</label><br>
     
                         <input type="checkbox" id="includeSongName" name="includeSongName" value="includeSongName" onclick="songTitle()">
                         <label for="includeSongName">Include the song title</label><br>
     
-                        <input type="checkbox" id="includeSongNameFull" name="includeSongNameFull" value="includeSongNameFull" disabled>
+                        <input type="checkbox" id="includeSongNameFull" name="includeSongNameFull" value="includeSongNameFull" onchange="songTitleFull()" disabled>
                         <label for="includeSongNameFull">Always show song title</label><br>
 
                         <label for="cars">How long should the video play:</label>
