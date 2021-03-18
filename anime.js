@@ -3,9 +3,9 @@ var rnd = 0;
 var rndPrev = 0;
 var startTime = 0;
 
-let videos = [""];
-let titles = [""];
-let songTitles = [""]
+let videos = ["SohCAjC-Npk", "0H_RCGEcjhs", "tF4faMbs5oQ"];
+let titles = ["Dr. Stone", "inward", "Yeuh"];
+let songTitles = ["\"Sangenshoku (三原色)\" by PELICAN FANCLUB"]
 
 function init() {
     var prevbutton = document.getElementById("prev");
@@ -27,7 +27,8 @@ var player;
 function onYouTubeIframeAPIReady() {
     rnd = rndVideo()
     rndPrev = rnd;
-    startTime = rndStart();
+    // startTime = rndTime();
+    rndStart();
 
     player = new YT.Player('player', {
         height: '0',
@@ -41,25 +42,18 @@ function onYouTubeIframeAPIReady() {
     document.getElementById("anime-title").innerHTML = titles[rnd]
 }
 
-function prev() {
-    document.getElementById("anime-title").innerHTML = titles[rndPrev]
-    player.loadVideoById(videos[rndPrev], 5, "large");
+
+// random function for video and start time
+function rndVideo() {
+    return Math.floor(Math.random() * videos.length);
 }
 
-function playPause() {
-    if (player.getPlayerState() == 2 || player.getPlayerState() == -1 || player.getPlayerState() == 5) {
-        player.playVideo();
-        document.getElementById("play-pause").setAttribute("src", "Images/pause.png");
-        document.getElementById("play-pause").setAttribute("alt", "pause-button");
-    }
-    else if (player.getPlayerState() == 1) {
-        player.pauseVideo();
-        document.getElementById("play-pause").setAttribute("src", "Images/play.png");
-        document.getElementById("play-pause").setAttribute("alt", "play-button");
-
-    }
+function rndTime() {
+    return (15 + Math.floor(Math.random() * 15));
 }
 
+
+// functions for the music controls
 function next() {
     rnd = rndVideo();
     startTime = rndStart();
@@ -69,7 +63,14 @@ function next() {
     }
     // rndPrev = rnd;
     document.getElementById("anime-title").innerHTML = titles[rnd]
-    player.loadVideoById(videos[rnd], startTime);
+    if (player.getPlayerState() == 1) {
+        player.loadVideoById(videos[rnd], startTime);
+    }
+    else if (player.getPlayerState() == 2) {
+        player.cueVideoById(videos[rnd], startTime);
+    }
+    
+    hideAnime();
 }
 
 function replay() {
@@ -86,12 +87,60 @@ function settings() {
       }    
 }
 
-function rndVideo() {
-    return Math.floor(Math.random() * videos.length);
+function prev() {
+    document.getElementById("anime-title").innerHTML = titles[rndPrev]
+    player.cueVideoById(videos[rndPrev], 5, "large");
 }
 
+function playPause() {
+    if (player.getPlayerState() == 2 || player.getPlayerState() == -1 || player.getPlayerState() == 5) {
+        player.playVideo();
+        document.getElementById("play-pause").setAttribute("src", "Images/pause.png");
+        document.getElementById("play-pause").setAttribute("alt", "pause-button");
+    }
+    else if (player.getPlayerState() == 1) {
+        player.pauseVideo();
+        document.getElementById("play-pause").setAttribute("src", "Images/play.png");
+        document.getElementById("play-pause").setAttribute("alt", "play-button");
+
+    }
+}
+
+
+// functions for settings
 function rndStart() {
-    return (15 + Math.floor(Math.random() * 15));
+    if (document.getElementById("random").checked) {
+        return startTime = rndTime();
+    }
+}
+
+function playTime() {
+
+}
+
+function songTitle() {
+    var includesongTitleFull = document.getElementById("includeSongNameFull");
+
+    if (includesongTitleFull.hasAttribute("disabled")) {
+        includesongTitleFull.disabled = false;
+    }
+    else {
+        includesongTitleFull.disabled = true;
+    }
+}
+
+function songTitleFull() {
+
+}
+
+
+// show anime button
+function showAnime() {
+    document.getElementById("anime-title").style.backgroundColor = "rgba(0, 0, 0, 0)";
+}
+
+function hideAnime() {
+    document.getElementById("anime-title").style.backgroundColor = "black";
 }
 
 window.onload = init;
