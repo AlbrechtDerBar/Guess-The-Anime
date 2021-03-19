@@ -31,3 +31,27 @@ body {
 .titles {
     background-color: rgba(0, 0, 0, 0);
 }
+
+.progress-bar {
+    background-color: gray;
+    display: inline-block;
+    width: 245px;
+    height: 5px;
+}
+
+.progress {
+    background-color: lightskyblue;
+    width: 5%;
+    left: 50px;
+    position: relative;
+    height: 5px;
+}
+
+.playhead {
+    background-color: black;
+    display: block;
+    position: relative;
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+}
