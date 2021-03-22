@@ -4,14 +4,10 @@ var rndPrev = 0;
 var startTime = 0;
 var endTime = 0;
 
-let videos = JSON.parse(videoList)
 // let videos = ["zL6fxRygbMY", "qkyAPKo-qkc", "cGHOWUkvbC4", "xui6WpsKeSc", "woLjcLUQVxs", "tpliFaBhxf4", "pe3kUUW-Sw0", "Eich6wkDtNg", "1M8TZcZdc5M", "bkp8bt2yau4", "kr8kTev-Yb0", "I-s6XZhrNZI", "TX5CJfmQbo8", "uVXItgOO4k0"];
-let titles = JSON.parse(titleList)
 // let titles = ["Absolute Duo", "Acchi Kocchi", "Akame Ga Kill", "Akame Ga Kill", "Anohana", "Anohana", "Another", "Ansatsu Kyoushitsu", "AoNoExorcist", "AoNoExorcist", "Ao No Exorcist：Kyoto Fujouou Hen", "Baccano!", "Black Bullet", "Black Lagoon"];
-let songTitles = JSON.parse(songList)
 // let songTitles = ["\"Absolute Soul\" by Konomi Suzuki", "\"Acchi de Kocchi de\" by Acchi⇔Kocchi", "\"Skyreach\" by Sora Amamiya", "\"LIAR MASK\" by Rika Mayama", "\"Aoi Shiori (青い栞)\" by Galileo Galilei", "\"Circle Game (サークルゲーム)\" by Galileo Galilei", "\"Kyoumu Densen (凶夢伝染)\" by ALI PROJECT", "Idk", "AoNoExorcist 1", "AoNoExorcist 2", "Ao No Exorcist：Kyoto Fujouou Hen", "Baccano!", "Black Bullet", "Black Lagoon"];
 
-console.log(months);
 function init() {
     var prevbutton = document.getElementById("prev");
     var settingsbutton = document.getElementById("settings-button");
@@ -63,7 +59,7 @@ function onYouTubeIframeAPIReady() {
 
 // random function for video
 function rndVideo() {
-    return Math.floor(Math.random() * (videos.length));
+    return Math.floor(Math.random() * videos.length);
 }
 //random function for start time
 function rndTime() {
