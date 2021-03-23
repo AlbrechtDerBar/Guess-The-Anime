@@ -27,4 +27,9 @@ let songTitles = [
     "\"02~O-Two~\" by Orange Range",
     "\"WORLD END\" by FLOW",
     "\"Tank!\" by The Seatbelts",
-    "\"Checkmate!?\" by MICHI"];
+    "\"Checkmate!?\" by MICHI",
+    "\"Howling\" by Abingdon Boys School",
+    "\"Kakusei Heroism ~The Hero without a Name~\" by An Cafe ",
+    "\"Flyers\" by BRADIO",
+    "\"Hey World\" by Yuka Iguchi",
+    "\"Lilium\" by Kumiko Noma"];

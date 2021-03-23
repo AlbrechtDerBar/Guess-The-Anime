@@ -17,13 +17,13 @@
             <div id="anime-title" class="titles"></div>
             <br>
             <div id="song-title" class="titles"></div>
-            <div class="progress-bar"> 
-                <div class="progress">
-                    <div class="playhead"></div>
+            <div id="progress-bar"> 
+                <div id="progress">
+                    <div id="playhead"></div>
                 </div>
             </div>
             <div class="controls">
-                <div class="buttons">
+                <div class="player-buttons">
                     <img src="Images/prev.png" alt="previous-song-button" class="png" id="prev">
                     <img src="Images/settings.png" alt="settings-button" class="png" id="settings-button">
                     <img src="Images/play.png" alt="play-button" class="png" id="play-pause">
@@ -53,6 +53,10 @@
                     </form>
                 </div>
             </div>
-            <button id="show">Show anime</button>
+            <div class="button-container">
+                <button class="buttons" id="show">Show Anime</button>
+                <button class="buttons" id="show-song">Show Song</button>
+                <button class="buttons" id="show-video">Show Video</button>
+            </div>
     </body>
 </html>

@@ -19,6 +19,8 @@ function init() {
     var songName = document.getElementById("includeSongName");
     var random = document.getElementById("random");
     var playtime = document.getElementById("time");
+    var showSongButton = document.getElementById("show-song");
+    var showVideoButton = document.getElementById("show-video");
 
     prevbutton.addEventListener("click", prev);
     settingsbutton.addEventListener("click", settings);
@@ -31,14 +33,15 @@ function init() {
     songName.addEventListener("change", songTitle);
     random.addEventListener("change", next);
     playtime.addEventListener("change", next);
+    showSongButton.addEventListener("click", showSong);
+    showVideoButton.addEventListener("click", showVideo);
 }
 
 var player;
 
 function onYouTubeIframeAPIReady() {
-    rnd = rndVideo()
+    rnd = rndVideo();
     rndPrev = rnd;
-    rndStart();
 
     player = new YT.Player('player', {
         height: '0',
@@ -46,14 +49,13 @@ function onYouTubeIframeAPIReady() {
         videoId: videos[rnd],
         playerVars: {
             'start': startTime,
-            'endSeconds': endTime
         }
     });
 
-    document.getElementById("anime-title").innerHTML = titles[rnd]
+    document.getElementById("anime-title").innerHTML = titles[rnd];
 
-    player.addEventListener("onStateChange", ended)
-    player.addEventListener("onStateChange", state)
+    player.addEventListener("onStateChange", ended);
+    player.addEventListener("onStateChange", state);
 }
 
 
@@ -107,6 +109,7 @@ function settings() {
 
 function prev() {
     document.getElementById("anime-title").innerHTML = titles[rndPrev]
+    document.getElementById("song-title").innerHTML = songTitles[rndPrev]
     player.cueVideoById({'videoId': videos[rnd],
     'startSeconds': startTime,
     'endSeconds': endTime});
@@ -186,7 +189,7 @@ function songTitleFull() {
 // show anime button
 function showAnime() {
     document.getElementById("anime-title").style.backgroundColor = "rgba(0, 0, 0, 0)";
-    document.getElementById("song-title").style.backgroundColor = "rgba(0, 0, 0, 0)";
+    // document.getElementById("song-title").style.backgroundColor = "rgba(0, 0, 0, 0)";
 }
 
 function hideAnime() {
@@ -196,6 +199,36 @@ function hideAnime() {
     else {
         document.getElementById("anime-title").style.backgroundColor = "black";
         document.getElementById("song-title").style.backgroundColor = "black";
+    }
+}
+
+function showSong() {
+    var button = document.getElementById("show-song");
+    if(document.getElementById("includeSongName").checked) {
+        if (document.getElementById("includeSongNameFull").checked) {
+
+        }
+        else {
+            document.getElementById("song-title").style.backgroundColor = "rgba(0, 0, 0, 0)";
+        }
+    }
+    else {
+
+    }
+}
+
+function showVideo() {
+    var video = document.getElementById("player");
+    var button = document.getElementById("show-video");
+    if (video.getAttribute("width") == 0 && video.getAttribute("width") == 0) {
+        video.setAttribute("width", 640);
+        video.setAttribute("height", 360);
+        button.innerHTML = "Hide Video";
+    }
+    else {
+        video.setAttribute("width", 0);
+        video.setAttribute("height", 0);
+        button.innerHTML = "Show Video";
     }
 }
 

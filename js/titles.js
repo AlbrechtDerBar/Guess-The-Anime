@@ -27,4 +27,9 @@ let titles = [
     "Code Geass: Lelouch of the Rebellion R2",
     "Code Geass: Lelouch of the Rebellion R2",
     "Cowboy Bebop",
-    "Dagashi Kashi"];
+    "Dagashi Kashi",
+    "Darker Than Black",
+    "Darker Than Black",
+    "Death Parade",
+    "Is It Wrong to Try to Pick Up Girls in a Dungeon?",
+    "Elfen Lied"];

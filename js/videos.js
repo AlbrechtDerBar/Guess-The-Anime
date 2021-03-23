@@ -27,4 +27,9 @@ let videos = [
     "wxkx7ZjlnqY",
     "vnldHOJAlVU",
     "tO7c0x8V6UY",
-    "Q3dKfPRXaIM"];
+    "Q3dKfPRXaIM",
+    "35nAfhTjxfI",
+    "GwgAW9lSuqY",
+    "XreJ80gDgLI",
+    "mQisr1Sza5I",
+    "m74qG8FqRwQ"];

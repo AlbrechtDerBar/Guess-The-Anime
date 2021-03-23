@@ -32,22 +32,22 @@ body {
     background-color: rgba(0, 0, 0, 0);
 }
 
-.progress-bar {
+#progress-bar {
     background-color: gray;
     display: inline-block;
     width: 245px;
     height: 5px;
 }
 
-.progress {
+#progress {
     background-color: lightskyblue;
-    width: 5%;
-    left: 50px;
+    width: 0px;
+    left: 0px;
     position: relative;
     height: 5px;
 }
 
-.playhead {
+#playhead {
     background-color: black;
     display: block;
     position: relative;
