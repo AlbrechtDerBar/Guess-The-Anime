@@ -32,4 +32,14 @@ let titles = [
     "Darker Than Black",
     "Death Parade",
     "Is It Wrong to Try to Pick Up Girls in a Dungeon?",
-    "Elfen Lied"];
+    "Elfen Lied",
+    "Fairy Tail (2014)",
+    "Fairy Tail (2014)",
+    "Fairy Tail (2014)",
+    "Fairy Tail (2014)",
+    "Fairy Tail",
+    "Fairy Tail",
+    "Fairy Tail",
+    "Fairy Tail",
+    "Fairy Tail",
+    "Fairy Tail"];

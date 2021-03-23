@@ -1,6 +1,7 @@
 // variables for random song/start time
 var rnd = 0;
 var rndPrev = 0;
+var current = 0;
 var startTime = 0;
 var endTime = 0;
 
@@ -31,8 +32,8 @@ function init() {
     show.addEventListener("click", showAnime);
     showSongAlways.addEventListener("change", songTitleFull);
     songName.addEventListener("change", songTitle);
-    random.addEventListener("change", next);
-    playtime.addEventListener("change", next);
+    random.addEventListener("change", reload);
+    playtime.addEventListener("change", reload);
     showSongButton.addEventListener("click", showSong);
     showVideoButton.addEventListener("click", showVideo);
 }
@@ -42,6 +43,7 @@ var player;
 function onYouTubeIframeAPIReady() {
     rnd = rndVideo();
     rndPrev = rnd;
+    current = rnd;
 
     player = new YT.Player('player', {
         height: '0',
@@ -72,6 +74,7 @@ function rndTime() {
 // functions for the music controls
 function next() {
     rnd = rndVideo();
+    rndPrev = rnd;
     rndStart();
     playTime();
 
@@ -108,11 +111,12 @@ function settings() {
 }
 
 function prev() {
-    document.getElementById("anime-title").innerHTML = titles[rndPrev]
-    document.getElementById("song-title").innerHTML = songTitles[rndPrev]
-    player.cueVideoById({'videoId': videos[rnd],
-    'startSeconds': startTime,
-    'endSeconds': endTime});
+    // document.getElementById("anime-title").innerHTML = titles[rndPrev]
+    // document.getElementById("song-title").innerHTML = songTitles[rndPrev]
+    // player.cueVideoById({'videoId': videos[rnd],
+    // 'startSeconds': startTime,
+    // 'endSeconds': endTime});
+    alert("suck my nuts, I was too lazy to get that working.")
 }
 
 function playPause() {
@@ -182,23 +186,45 @@ function songTitle() {
 }
 
 function songTitleFull() {
-    document.getElementById("song-title").style.backgroundColor = "rgba(0, 0, 0, 0)";
+    document.getElementById("song-title").style.display = "block"
+}
+
+function reload() {
+    rndStart();
+    playTime();
+
+    document.getElementById("anime-title").innerHTML = titles[current]
+    if (document.getElementById("includeSongName").checked) {
+        document.getElementById("song-title").innerHTML = songTitles[current]
+    }
+    if (player.getPlayerState() == 1) {
+        player.loadVideoById({'videoId': videos[current],
+        'startSeconds': startTime,
+        'endSeconds': endTime});
+    }
+    else if (player.getPlayerState() == 2 || player.getPlayerState() == -1 || player.getPlayerState() == 5  || player.getPlayerState() == 0) {
+        player.cueVideoById({'videoId': videos[current],
+        'startSeconds': startTime,
+        'endSeconds': endTime});
+    }
+    
+    hideAnime();
 }
 
 
 // show anime button
 function showAnime() {
-    document.getElementById("anime-title").style.backgroundColor = "rgba(0, 0, 0, 0)";
+    document.getElementById("anime-title").style.display = "block";
     // document.getElementById("song-title").style.backgroundColor = "rgba(0, 0, 0, 0)";
 }
 
 function hideAnime() {
     if (document.getElementById("includeSongNameFull").checked) {
-        document.getElementById("anime-title").style.backgroundColor = "black";
+        document.getElementById("anime-title").style.display = "none";
     }
     else {
-        document.getElementById("anime-title").style.backgroundColor = "black";
-        document.getElementById("song-title").style.backgroundColor = "black";
+        document.getElementById("anime-title").style.display = "none";
+        document.getElementById("song-title").style.display = "none";
     }
 }
 
@@ -209,7 +235,7 @@ function showSong() {
 
         }
         else {
-            document.getElementById("song-title").style.backgroundColor = "rgba(0, 0, 0, 0)";
+            document.getElementById("song-title").style.display = "block";
         }
     }
     else {

@@ -32,4 +32,14 @@ let songTitles = [
     "\"Kakusei Heroism ~The Hero without a Name~\" by An Cafe ",
     "\"Flyers\" by BRADIO",
     "\"Hey World\" by Yuka Iguchi",
-    "\"Lilium\" by Kumiko Noma"];
+    "\"Lilium\" by Kumiko Noma",
+    "\"MASAYUME CHASING\" by BoA",
+    "\"STRIKE BACK\" by BACK-ON",
+    "\"Mysterious Magic\" by Do As Infinity",
+    "\"BREAK OUT\" by V6",
+    "\"Snow fairy\" by FUNKIST",
+    "\"S.O.W. Sense of Wonder\" by Idoling!!!",
+    "\"ft.\" by FUNKIST",
+    "\"R.P.G. ~Rockin' Playing Game\" by SuG",
+    "\"Egao No Mahou\" by Magic Party",
+    "\"Fiesta\" by +Plus"];

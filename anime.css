@@ -13,19 +13,19 @@ body {
 }
 
 #anime-title {
-    display: inline-block;
-    width: auto;
-    text-align: center;
-    margin: auto;
-    background-color: black;
+    display: none;
+    /* width: auto; */
+    /* text-align: center; */
+    /* margin: auto; */
+    /* background-color: black; */
 }
 
 #song-title {
-    display: inline-block;
-    width: auto;
-    text-align: center;
-    margin: auto;
-    background-color: black;
+    display: none;
+    /* width: auto; */
+    /* text-align: center; */
+    /* margin: auto; */
+    /* background-color: black; */
 }
 
 .titles {
