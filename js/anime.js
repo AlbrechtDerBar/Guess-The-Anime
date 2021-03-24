@@ -163,6 +163,9 @@ function playTime() {
             endTime = startTime + 5;
         break;
         case 3:
+            endTime = startTime + 3;
+        break;
+        case 4:
             endTime = startTime + 1;
         break;
         default:
