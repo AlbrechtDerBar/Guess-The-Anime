@@ -1,6 +1,6 @@
 // variables for random song/start time
 var rnd = 0;
-var rndPrev = 0;
+var rndPrev = [];
 var current = 0;
 var startTime = 0;
 var endTime = 0;
@@ -42,7 +42,8 @@ var player;
 
 function onYouTubeIframeAPIReady() {
     rnd = rndVideo();
-    rndPrev = rnd;
+    rndPrev.push(rnd);
+    console.log(rndPrev);
     current = rnd;
 
     player = new YT.Player('player', {
@@ -58,6 +59,7 @@ function onYouTubeIframeAPIReady() {
 
     player.addEventListener("onStateChange", ended);
     player.addEventListener("onStateChange", state);
+    player.addEventListener("onStateChange", played);
 }
 
 
@@ -74,9 +76,20 @@ function rndTime() {
 // functions for the music controls
 function next() {
     rnd = rndVideo();
-    rndPrev = rnd;
+    current = rnd;
+    rndPrev.push(rnd);
+    console.log(rndPrev);
     rndStart();
     playTime();
+
+    if (!unplayed.includes(true)){
+        alert("This is the end of the player");
+        return;
+    }
+
+    if (unplayed[rnd] == false) {
+        next();
+    }
 
     document.getElementById("anime-title").innerHTML = titles[rnd]
     if (document.getElementById("includeSongName").checked) {
@@ -111,12 +124,25 @@ function settings() {
 }
 
 function prev() {
-    // document.getElementById("anime-title").innerHTML = titles[rndPrev]
-    // document.getElementById("song-title").innerHTML = songTitles[rndPrev]
-    // player.cueVideoById({'videoId': videos[rnd],
-    // 'startSeconds': startTime,
-    // 'endSeconds': endTime});
-    alert("suck my nuts, I was too lazy to get that working.")
+    if (rndPrev.length == 1) {
+        alert("this is the first video retard");
+        return;
+    }
+    rndPrev.pop();
+    var prev = rndPrev[rndPrev.length - 1];
+    console.log(rndPrev);
+    document.getElementById("anime-title").innerHTML = titles[prev]
+    document.getElementById("song-title").innerHTML = songTitles[prev]
+    if (player.getPlayerState() == 1) {
+        player.loadVideoById({'videoId': videos[prev],
+        'startSeconds': startTime,
+        'endSeconds': endTime});
+    }
+    else if (player.getPlayerState() == 2 || player.getPlayerState() == -1 || player.getPlayerState() == 5  || player.getPlayerState() == 0) {
+        player.cueVideoById({'videoId': videos[prev],
+        'startSeconds': startTime,
+        'endSeconds': endTime});
+    }
 }
 
 function playPause() {
@@ -137,6 +163,13 @@ function ended() {
     if (player.getPlayerState() == 0) {
         document.getElementById("play-pause").setAttribute("src", "Images/play.png");
         document.getElementById("play-pause").setAttribute("alt", "play-button");
+    }
+}
+
+function played() {
+    if (player.getPlayerState() == 1) {
+        unplayed[rnd] = false;
+        console.log(unplayed);
     }
 }
 
@@ -287,3 +320,13 @@ function state() {
 }
 
 window.onload = init;
+
+// notes
+/*
+    -1 – unstarted
+    0 – ended
+    1 – playing
+    2 – paused
+    3 – buffering
+    5 – video cued
+*/
