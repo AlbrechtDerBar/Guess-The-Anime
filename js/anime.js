@@ -268,14 +268,14 @@ function showSong() {
     var button = document.getElementById("show-song");
     if(document.getElementById("includeSongName").checked) {
         if (document.getElementById("includeSongNameFull").checked) {
-
+            alert("Are you retarded or just blind. the song is already displayed.");
         }
         else {
             document.getElementById("song-title").style.display = "block";
         }
     }
     else {
-
+        alert("Maybe turn on include song titles retard. Just an idea.");
     }
 }
 
