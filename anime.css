@@ -35,7 +35,7 @@ body {
 #progress-bar {
     background-color: gray;
     display: inline-block;
-    width: 245px;
+    width: 270px;
     height: 5px;
 }
 
@@ -44,7 +44,7 @@ body {
     width: 0px;
     left: 0px;
     position: relative;
-    height: 5px;
+    height: 100%;
 }
 
 #playhead {
