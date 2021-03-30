@@ -127,6 +127,6 @@ let animelist = [
     new anime("No Game, No Life", "\"This game\" by Konomi Suzuki", "_qFB2X38AcM", true, false),
     new anime("Noragami: Stray God", "\"Goya no Machiawase\" by Hello Sleepwalkers", "wf9gs-Y_9zY", true, false),
     new anime("Noragami Aragoto", "\"Kyouran Hey Kids!!\" by THE ORAL CIGARETTES", "fF-BLbA3fCM", true, false),
-    // new anime("", "", "", true, false), 
+    // new anime("", "", "", true, false),  
 // number of anime = line# - 9
 ]
