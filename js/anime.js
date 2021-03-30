@@ -354,17 +354,6 @@ function state() {
     }
 }
 
-async function lazy() {
-    let lazy = document.getElementById("lazy");
-    let text = "";
-    for (i = 0; i < 120; i++) {
-        text += "new anime(\"" + titles[i] + "\", \"" + songTitles[i] + "\", \"" + videos[i] + "\", true, false),";
-        text += "<br>"
-        console.log(text);
-    }
-    lazy.innerHTML = text;
-}
-
 window.onload = init;
 
 // notes
