@@ -116,4 +116,6 @@ let videos = [
     "S5OJZmR5E2Y",
 /*b*/    "6oyGviN5KqQ",
     "pdGOwE8qfuU",
-    "_qFB2X38AcM"];
+    "_qFB2X38AcM",
+    "wf9gs-Y_9zY",
+    "fF-BLbA3fCM"];

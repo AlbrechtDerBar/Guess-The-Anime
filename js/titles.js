@@ -51,7 +51,7 @@ let titles = [
     "Fairy Tail",
     "Fairy Tail",
     "Fairy Tail",
-    "Fullmetal Alchemist：Brotherhood",
+    "Fullmetal Alchemist: Brotherhood",
     "Fullmetal Alchemist：Brotherhood",
     "Fullmetal Alchemist：Brotherhood",
     "Fullmetal Alchemist：Brotherhood",
@@ -116,4 +116,6 @@ let titles = [
     "Nisekoi: False Love",
     "Nisekoi: False Love",
     "Nisekoi: False Love",
-    "No Game, No Life"];
+    "No Game, No Life",
+    "Noragami: Stray God",
+    "Noragami Aragoto"];

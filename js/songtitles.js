@@ -116,4 +116,6 @@ let songTitles = [
     "\"STEP\" by ClariS",
     "\"Rally Go Round\" by LiSA",
     "\"Magical☆Styling\" by Magical Pâtissière Kosaki-chan",
-    "\"This game\" by Konomi Suzuki"];
+    "\"This game\" by Konomi Suzuki",
+    "\"Goya no Machiawase\" by Hello Sleepwalkers",
+    "\"Kyouran Hey Kids!!\" by THE ORAL CIGARETTES"];
