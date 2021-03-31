@@ -127,6 +127,19 @@ let animelist = [
     new anime("No Game, No Life", "\"This game\" by Konomi Suzuki", "_qFB2X38AcM", true, false),
     new anime("Noragami: Stray God", "\"Goya no Machiawase\" by Hello Sleepwalkers", "wf9gs-Y_9zY", true, false),
     new anime("Noragami Aragoto", "\"Kyouran Hey Kids!!\" by THE ORAL CIGARETTES", "fF-BLbA3fCM", true, false),
+    new anime("Okami-San and Her Seven Companions", "\"Ready Go!\" by May'n", "45EZ9zoSfdc", true, false),  
+    new anime("One Punch Man", "\"THE HERO !! ~Okoreru Kobushi ni Hi wo Tsukero~\" by JAM Project", "WIJ1c4Aj-Os", true, false),  
+    new anime("My Mental Choices Are Completely Interfering With My School Romantic Comedy", "\"S・M・L☆\" by Afilia Saga", "ed6QI0LGc2A", true, false),  
+    new anime("My Mental Choices Are Completely Interfering With My School Romantic Comedy", "\"Taiyou to Tsuki no Cross\" by TWO-FORMULA", "cTKwsMj37Hw", true, false),  
+    new anime("Overlord", "\"Clattanoia\" by O×T", "86f5zNhEDBo", true, false),  
+    new anime("Parasyte -the maxim-", "\"Let Me Hear\" by Fear, and Loathing in Las Vegas", "rOww2Powig8", true, false),  
+    new anime("Persona 4 the Animation", "\"sky's the limit\" by Shihoko Hirata", "aR5dmkdaNbI", true, false),  
+    new anime("Plastic Memories", "\"Ring of Fortune\" by Eri Sasaki", "WeKuEqaUgO8", true, true),  
+    new anime("Psycho-Pass", "\"abnormalize\" by Ling Tosite Sigure", "2uljvj02m-w", true, false),  
+    new anime("Psycho-Pass", "\"Out of Control\" by Nothing's Carved in Stone", "7X43tlCZFGg", true, false),  
+    new anime("Psycho-Pass 2", "\"Enigmatic Feeling\" by Ling Tosite Sigure", "gAVMV9tGm9U", true, false),  
+    new anime("Punch Line", "\"PUNCH LINE!\" by Shokotan ♥ Denpa Gumi", "lSy52K5cwMo", true, false),  
+    new anime("Chivalry of a Failed Knight", "\"Identity\" by Mikio Sakai", "VuwzXrHC3oU", true, false)  
     // new anime("", "", "", true, false),  
 // number of anime = line# - 9
 ]

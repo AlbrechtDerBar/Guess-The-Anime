@@ -37,8 +37,10 @@ function init() {
     playtime.addEventListener("change", reload);
     showSongButton.addEventListener("click", showSong);
     showVideoButton.addEventListener("click", showVideo);
-    document.addEventListener("keydown", keyboard)
-    console.log(animelist);
+    document.addEventListener("keydown", keyboard);
+    
+    state();
+    blocked();
 }
 
 var player;
@@ -52,13 +54,13 @@ function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
         height: '0',
         width: '0',
-        videoId: videos[rnd],
+        videoId: animelist[rnd].video,
         playerVars: {
             'start': startTime,
         }
     });
 
-    document.getElementById("anime-title").innerHTML = titles[rnd];
+    document.getElementById("anime-title").innerHTML = animelist[rnd].title;
 
     player.addEventListener("onStateChange", ended);
     player.addEventListener("onStateChange", state);
@@ -68,7 +70,7 @@ function onYouTubeIframeAPIReady() {
 
 // random function for video
 function rndVideo() {
-    return Math.floor(Math.random() * videos.length);
+    return Math.floor(Math.random() * animelist.length);
 }
 //random function for start time
 function rndTime() {
@@ -78,33 +80,35 @@ function rndTime() {
 
 // functions for the music controls
 function next() {
+    console.log(animelist)
     rnd = rndVideo();
     current = rnd;
     rndPrev.push(rnd);
     console.log(rndPrev);
     rndStart();
     playTime();
+    blocked();
 
-    if (!unplayed.includes(true)){
+    if (!animelist.some(anime => anime.unplayed == true)){
         alert("This is the end of the player");
         return;
     }
 
-    if (unplayed[rnd] == false) {
+    if (animelist[rnd].unplayed == false) {
         next();
     }
 
-    document.getElementById("anime-title").innerHTML = titles[rnd]
+    document.getElementById("anime-title").innerHTML = animelist[rnd].title
     if (document.getElementById("includeSongName").checked) {
-        document.getElementById("song-title").innerHTML = songTitles[rnd]
+        document.getElementById("song-title").innerHTML = animelist[rnd].songtitle
     }
     if (player.getPlayerState() == 1) {
-        player.loadVideoById({'videoId': videos[rnd],
+        player.loadVideoById({'videoId': animelist[rnd].video,
         'startSeconds': startTime,
         'endSeconds': endTime});
     }
     else if (player.getPlayerState() == 2 || player.getPlayerState() == -1 || player.getPlayerState() == 5  || player.getPlayerState() == 0) {
-        player.cueVideoById({'videoId': videos[rnd],
+        player.cueVideoById({'videoId': animelist[rnd].video,
         'startSeconds': startTime,
         'endSeconds': endTime});
     }
@@ -134,15 +138,15 @@ function prev() {
     rndPrev.pop();
     var prev = rndPrev[rndPrev.length - 1];
     console.log(rndPrev);
-    document.getElementById("anime-title").innerHTML = titles[prev]
-    document.getElementById("song-title").innerHTML = songTitles[prev]
+    document.getElementById("anime-title").innerHTML = animelist[prev].title
+    document.getElementById("song-title").innerHTML = animelist[prev].songtitle
     if (player.getPlayerState() == 1) {
-        player.loadVideoById({'videoId': videos[prev],
+        player.loadVideoById({'videoId': animelist[prev].video,
         'startSeconds': startTime,
         'endSeconds': endTime});
     }
     else if (player.getPlayerState() == 2 || player.getPlayerState() == -1 || player.getPlayerState() == 5  || player.getPlayerState() == 0) {
-        player.cueVideoById({'videoId': videos[prev],
+        player.cueVideoById({'videoId': animelist[prev].video,
         'startSeconds': startTime,
         'endSeconds': endTime});
     }
@@ -171,8 +175,7 @@ function ended() {
 
 function played() {
     if (player.getPlayerState() == 1) {
-        unplayed[rnd] = false;
-        console.log(unplayed);
+        animelist[rnd].unplayed = false;
     }
 }
 
@@ -247,7 +250,7 @@ function songTitle() {
 
     if (includesongTitleFull.hasAttribute("disabled")) {
         includesongTitleFull.disabled = false;
-        songTitle.innerHTML = songTitles[rnd];
+        songTitle.innerHTML = animelist[rnd].songtitle;
     }
     else {
         includesongTitleFull.disabled = true;
@@ -264,17 +267,17 @@ function reload() {
     rndStart();
     playTime();
 
-    document.getElementById("anime-title").innerHTML = titles[current]
+    document.getElementById("anime-title").innerHTML = animelist[current].title
     if (document.getElementById("includeSongName").checked) {
-        document.getElementById("song-title").innerHTML = songTitles[current]
+        document.getElementById("song-title").innerHTML = animelist[current].songtitle
     }
     if (player.getPlayerState() == 1) {
-        player.loadVideoById({'videoId': videos[current],
+        player.loadVideoById({'videoId': animelist[current].video,
         'startSeconds': startTime,
         'endSeconds': endTime});
     }
     else if (player.getPlayerState() == 2 || player.getPlayerState() == -1 || player.getPlayerState() == 5  || player.getPlayerState() == 0) {
-        player.cueVideoById({'videoId': videos[current],
+        player.cueVideoById({'videoId': animelist[current].video,
         'startSeconds': startTime,
         'endSeconds': endTime});
     }
@@ -300,7 +303,6 @@ function hideAnime() {
 }
 
 function showSong() {
-    var button = document.getElementById("show-song");
     if(document.getElementById("includeSongName").checked) {
         if (document.getElementById("includeSongNameFull").checked) {
             alert("Are you retarded or just blind. the song is already displayed.");
@@ -331,26 +333,43 @@ function showVideo() {
 
 // debug
 function state() {
+    let state = document.getElementById("state")
     switch(player.getPlayerState()) {
         case 0:
             console.log("ended");
+            state.innerHTML = "Ended";
         break;
         case 1:
             console.log("playing");
+            state.innerHTML = "Playing";
         break;
         case 2:
             console.log("paused");
+            state.innerHTML = "Paused";
         break;
         case 3:
             console.log("buffering");
+            state.innerHTML = "Buffering...";
         break;
         case 5:
             console.log("video cued");
+            state.innerHTML = "Video Cued";
         break;
         case -1:
             console.log("unstarted");
+            state.innerHTML = "Unstarted";
         break;
             
+    }
+}
+
+function blocked() {
+    let blocked = document.getElementById("blocked");
+    if (animelist[current].blocked == true) {
+        blocked.innerHTML = "This video is blocked";
+    }
+    else {
+        blocked.innerHTML = "you can watch this video";
     }
 }
 

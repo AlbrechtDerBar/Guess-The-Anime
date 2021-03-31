@@ -5,7 +5,7 @@
                 color: red;
             }
         </style>
-        <h1>test</h1>
+        <!-- <h1>test</h1> -->
         <!-- <div>Absolute Duo</div>
         <div>"Absolute Soul" by Konomi Suzuki</div>
         <iframe width="727" height="409" src="https://www.youtube.com/embed/1CBctbw3c0s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -156,7 +156,7 @@
         <iframe width="727" height="409" src="https://www.youtube.com/embed/dqFJ4K1YOOw?list=PLvM6BFVEiFbiwkdV4Rzpz8h-mc2eWq4Bu" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <div>Fairy Tail</div>
         <div></div> -->
-        <iframe width="670" height="377" src="https://www.youtube.com/embed/videoseries?list=PLRRF_S2yR0DfZdZot6PzOww2hacdQzYsx&index=201 " frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!-- <iframe width="670" height="377" src="https://www.youtube.com/embed/videoseries?list=PLRRF_S2yR0DfZdZot6PzOww2hacdQzYsx&index=201 " frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
         <!-- <div>Fairy Tail</div>
         <div></div>
             
@@ -171,6 +171,30 @@
 
         <div>Fairy Tail</div>
         <div></div> -->
+
+        <script>
+            function object (name, length) {
+                this.name = name;
+                this.length = length;
+            }
+            
+            function test() {
+                let array = [
+                    new object("name1", 1),
+                    new object("name2", 2)
+                ]
+                console.log(new object("name", 1))
+                console.log(array.some(object => object.length == 1))
+            }
+
+            function pass() {
+                
+            }
+        </script>
+
+        <div id="test" onclick="test()">
+            click me
+        </div>
         
     </body>
 </html>
