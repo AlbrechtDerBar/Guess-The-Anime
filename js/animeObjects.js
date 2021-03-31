@@ -139,7 +139,22 @@ let animelist = [
     new anime("Psycho-Pass", "\"Out of Control\" by Nothing's Carved in Stone", "7X43tlCZFGg", true, false),  
     new anime("Psycho-Pass 2", "\"Enigmatic Feeling\" by Ling Tosite Sigure", "gAVMV9tGm9U", true, false),  
     new anime("Punch Line", "\"PUNCH LINE!\" by Shokotan ♥ Denpa Gumi", "lSy52K5cwMo", true, false),  
-    new anime("Chivalry of a Failed Knight", "\"Identity\" by Mikio Sakai", "VuwzXrHC3oU", true, false)  
+    new anime("Chivalry of a Failed Knight", "\"Identity\" by Mikio Sakai", "VuwzXrHC3oU", true, false),  
+    new anime("Rampo Kitan: Game of Laplace", "\"Speed to Masatsu\" by amazarashi", "jocLEw7IyaY", true, false),  
+    new anime("Re:ZERO -Starting Life in Another World-", "\"Redo\" by Konomi Suzuki", "2znQrZGYE7A", true, true),  
+    new anime("Re:ZERO -Starting Life in Another World-", "\"Paradisus-Paradoxum\" by MYTH & ROID", "lEt7rHdJU3w", true, true),  
+    new anime("Rokka: Braves of the Six Flowers", "\"Cry for the Truth\" by MICHI", "TJ8yMcKVHIo", true, false),  
+    new anime("Beautiful Bones -Sakurako's Investigation-", "\"Dear answer\" by TRUE", "JGlyns_x3qE", true, true),  
+    new anime("The Pet Girl of Sakurasou", "\"Kimi ga Yume wo Tsuretekita\" by Pet na Kanojo-tachi", "W08VV_87F6g", true, false),  
+    new anime("Samurai Champloo", "\"Battlecry\" by Nujabes feat. Shing02", "_R6fZ5IKtGg", true, false),  
+    new anime("Your Lie in April", "\"Hikaru nara\" by Goose house", "jS_A-sUTWGU", true, false),  
+    new anime("Your Lie in April", "\"Nanairo Symphony\" by Coala Mode.", "nj71uHj2ikQ", true, true),  
+    new anime("SHIMONETA: A Boring World Where the Concept of Dirty Jokes Doesn't Exist", "\"B Chiku Sentai SOX\" by SOX", "1E7nDlvzQTI", true, true),  
+    new anime("Attack on Titan", "\"Guren no Yumiya\" by Linked Horizon", "gfHYnDLAx8c", true, true),  
+    new anime("Attack on Titan", "\"Jiyuu no Tsubasa\" by Linked Horizon", "5sanyd0vIZA", true, false),  
+    new anime("Food Wars!", "\"Kibou no Uta\" by ULTRA TOWER", "vw-A_1KMmeU", true, false),  
+    new anime("Food Wars!", "\"Rising Rainbow\" by Misokkasu", "aLsv4hOIbVc", true, false),  
+    new anime("Heaven's Lost Property", "\"Ring My Bell\" by Blue Drops", "BHO0KQq_iKc", true, false)  
     // new anime("", "", "", true, false),  
 // number of anime = line# - 9
 ]
