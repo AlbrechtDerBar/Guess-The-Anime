@@ -48,7 +48,6 @@ var player;
 function onYouTubeIframeAPIReady() {
     rnd = rndVideo();
     rndPrev.push(rnd);
-    console.log(rndPrev);
     current = rnd;
 
     player = new YT.Player('player', {
@@ -80,13 +79,9 @@ function rndTime() {
 
 // functions for the music controls
 function next() {
-    console.log(animelist)
     rnd = rndVideo();
     current = rnd;
     rndPrev.push(rnd);
-    console.log(rndPrev);
-    rndStart();
-    playTime();
     blocked();
 
     if (!animelist.some(anime => anime.unplayed == true)){
@@ -104,13 +99,13 @@ function next() {
     }
     if (player.getPlayerState() == 1) {
         player.loadVideoById({'videoId': animelist[rnd].video,
-        'startSeconds': startTime,
-        'endSeconds': endTime});
+        'startSeconds': rndStart(),
+        'endSeconds': playTime()});
     }
     else if (player.getPlayerState() == 2 || player.getPlayerState() == -1 || player.getPlayerState() == 5  || player.getPlayerState() == 0) {
         player.cueVideoById({'videoId': animelist[rnd].video,
-        'startSeconds': startTime,
-        'endSeconds': endTime});
+        'startSeconds': rndStart(),
+        'endSeconds': playTime()});
     }
     
     hideAnime();
@@ -137,18 +132,17 @@ function prev() {
     }
     rndPrev.pop();
     var prev = rndPrev[rndPrev.length - 1];
-    console.log(rndPrev);
     document.getElementById("anime-title").innerHTML = animelist[prev].title
     document.getElementById("song-title").innerHTML = animelist[prev].songtitle
     if (player.getPlayerState() == 1) {
         player.loadVideoById({'videoId': animelist[prev].video,
-        'startSeconds': startTime,
-        'endSeconds': endTime});
+        'startSeconds': rndStart(),
+        'endSeconds': playTime()});
     }
     else if (player.getPlayerState() == 2 || player.getPlayerState() == -1 || player.getPlayerState() == 5  || player.getPlayerState() == 0) {
         player.cueVideoById({'videoId': animelist[prev].video,
-        'startSeconds': startTime,
-        'endSeconds': endTime});
+        'startSeconds': rndStart(),
+        'endSeconds': playTime()});
     }
 }
 
@@ -336,27 +330,27 @@ function state() {
     let state = document.getElementById("state")
     switch(player.getPlayerState()) {
         case 0:
-            console.log("ended");
+            // console.log("ended");
             state.innerHTML = "Ended";
         break;
         case 1:
-            console.log("playing");
+            // console.log("playing");
             state.innerHTML = "Playing";
         break;
         case 2:
-            console.log("paused");
+            // console.log("paused");
             state.innerHTML = "Paused";
         break;
         case 3:
-            console.log("buffering");
+            // console.log("buffering");
             state.innerHTML = "Buffering...";
         break;
         case 5:
-            console.log("video cued");
+            // console.log("video cued");
             state.innerHTML = "Video Cued";
         break;
         case -1:
-            console.log("unstarted");
+            // console.log("unstarted");
             state.innerHTML = "Unstarted";
         break;
             
