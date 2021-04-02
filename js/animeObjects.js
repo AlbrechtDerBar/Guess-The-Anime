@@ -154,7 +154,20 @@ let animelist = [
     new anime("Attack on Titan", "\"Jiyuu no Tsubasa\" by Linked Horizon", "5sanyd0vIZA", true, false),  
     new anime("Food Wars!", "\"Kibou no Uta\" by ULTRA TOWER", "vw-A_1KMmeU", true, false),  
     new anime("Food Wars!", "\"Rising Rainbow\" by Misokkasu", "aLsv4hOIbVc", true, false),  
-    new anime("Heaven's Lost Property", "\"Ring My Bell\" by Blue Drops", "BHO0KQq_iKc", true, false)  
+    new anime("Heaven's Lost Property", "\"Ring My Bell\" by Blue Drops", "BHO0KQq_iKc", true, false),  
+    new anime("Soul Eater", "\"Resonance\" by T.M.Revolution", "gLTG4iZlhXc", true, false),  
+    new anime("Soul Eater", "\"PAPERMOON\" by Tommy heavenly6", "cgs3nnHNWOs", true, true),  
+    new anime("Steins;Gate", "\"Hacking to the Gate\" by Kanako Itou", "r1mVKeeD1xU", true, false),  
+    new anime("Sword Art Online", "\"crossing field\" by LiSA", "JEPs2EaisFI", true, false),  
+    new anime("Sword Art Online II", "\"IGNITE\" by Eir Aoi", "--K7MxVDTRM", true, false),  
+    new anime("Gurren Lagann", "\"Sorairo Days\" by Shoko Nakagawa", "SvP_7aOH9AQ", true, true),  
+    new anime("Tokyo Ghoul", "\"unravel\" by TK from Ling Tosite Sigure", "Q9T-5jB65RA", true, true),  
+    new anime("My Little Monster", "\"Q&A Recital!\" by Haruka Tomatsu", "4St_0XhYFG0", true, false),  
+    new anime("Toradora!", "\"Pre-Parade\" by Rie Kugimiya, Yui Horie, and Eri Kitamura ", "UDwTiPhU3gU", true, true),  
+    new anime("Toradora!", "\"silky heart\" by Yui Horie", "PgLjJ1M8kTE", true, false),  
+    new anime("Trigun", "\"H.T.\" by Tsuneo Imahori", "VPPFZLdlhbs", true, false),  
+    new anime("Trinity Seven", "\"Seven Doors\" by ZAQ", "VW_IZ2-PxLQ", true, true),  
+    new anime("Yamada-kun and the Seven Witches", "\"Kuchizuke Diamond\" by WEAVER", "GvGeAQ1FfYs", true, false), 
     // new anime("", "", "", true, false),  
 // number of anime = line# - 9
 ]
