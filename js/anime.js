@@ -4,7 +4,6 @@ var rndPrev = [];
 var current = 0;
 var startTime = 0;
 var endTime = 0;
-var variable;
 
 // let videos = ["zL6fxRygbMY", "qkyAPKo-qkc", "cGHOWUkvbC4", "xui6WpsKeSc", "woLjcLUQVxs", "tpliFaBhxf4", "pe3kUUW-Sw0", "Eich6wkDtNg", "1M8TZcZdc5M", "bkp8bt2yau4", "kr8kTev-Yb0", "I-s6XZhrNZI", "TX5CJfmQbo8", "uVXItgOO4k0"];
 // let titles = ["Absolute Duo", "Acchi Kocchi", "Akame Ga Kill", "Akame Ga Kill", "Anohana", "Anohana", "Another", "Ansatsu Kyoushitsu", "AoNoExorcist", "AoNoExorcist", "Ao No Exorcist：Kyoto Fujouou Hen", "Baccano!", "Black Bullet", "Black Lagoon"];
@@ -60,6 +59,7 @@ function onYouTubeIframeAPIReady() {
     });
 
     document.getElementById("anime-title").innerHTML = animelist[rnd].title;
+    document.getElementById("song-title").innerHTML = animelist[rnd].songtitle;
 
     player.addEventListener("onStateChange", ended);
     player.addEventListener("onStateChange", state);
