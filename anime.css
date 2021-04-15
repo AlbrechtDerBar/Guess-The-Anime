@@ -2,6 +2,33 @@ body {
     background-color: rgb(72, 64, 90);
 }
 
+#main-player {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.video-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	margin: .5em;
+}
+
+#player {
+	display: none;
+	width: 100%;
+	margin-bottom: 1em;
+}
+
+.controls {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 1em;
+}
+
 .png {
     height: 3em;
     width: 3em;
@@ -54,4 +81,8 @@ body {
     border-radius: 50%;
     width: 5px;
     height: 5px;
+}
+
+#title {
+	margin: 0;
 }

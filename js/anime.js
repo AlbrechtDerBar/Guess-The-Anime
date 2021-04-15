@@ -313,14 +313,17 @@ function showSong() {
 function showVideo() {
     var video = document.getElementById("player");
     var button = document.getElementById("show-video");
+
     if (video.getAttribute("width") == 0 && video.getAttribute("width") == 0) {
         video.setAttribute("width", 640);
         video.setAttribute("height", 360);
+	video.style.display = "block";
         button.innerHTML = "Hide Video";
     }
     else {
         video.setAttribute("width", 0);
         video.setAttribute("height", 0);
+	video.style.display = "none";
         button.innerHTML = "Show Video";
     }
 }
